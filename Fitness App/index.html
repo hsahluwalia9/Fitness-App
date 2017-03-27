@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="/js/bmi.js"></script>
+    <link  rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <header>
+    <h1>Fitness App</h1>
+    <img class="logoImage" src="/images/dumbell_logo.jpg" height="80px;">
+    </header>
+    <div class="formDiv">
+    <h3>Get Fit Below</h3>
+    <form class="healthDataForm" ng-submit="calculateHealthStats()">
+        <label for="weight">Enter Weight (kg)</label>
+        <input ng-model ="weight" type="text" /><br>
+        <label for="height">Enter Height (m)</label>
+        <input ng-model ="height" type="text" /><br>
+        <label for="age">Enter Age</label>
+        <input ng-model ="age" type="text" /><br>
+        <label for="height">Activity Level</label>
+        <select class= "dropDown" name="activityLevel">
+            <option ng-model="sedentiary">Sedentary</option>
+            <option ng-model="slightlyActive">Slightly Active</option>
+            <option ng-model="active">Active</option>
+            <option ng-model="veryActive">Very Active</option>
+  </select>
+        <br>
+        <input type="button" value="Get Fit" ng-click="calculateHealthStats()"
+        <br>
+    </form>
+    <label for="bmi" >Body-Mass-Index (BMI)</label>
+    <input ng-model="bmi" type="text" disabled="disabled"/><br>
+    <label for="dailyCalories" >Daily Caloric Intake To Lose Weight:</label>
+    <input ng-model="dailyCalories" type="text" disabled="disabled"/>
+    </div>
+    <div class="dietDiv">
+    <h2>Diet Chart</h2>
+    <table>
+  <tr>
+    <th>Carbohydrates</th>
+    <th>Fats</th> 
+    <th>Protein</th>
+  </tr>
+  <tr>
+    <td><input ng-model="carbs" type="text" disabled="disabled"/><br></td>
+    <td><input ng-model="fats" type="text" disabled="disabled"/><br></td> 
+    <td><input ng-model="protein" type="text" disabled="disabled"/><br></td>
+  </tr>
+  <tr>
+    <td><input ng-model="carbsPct" type="text" disabled="disabled"/><br></td>
+    <td><input ng-model="fatsPct" type="text" disabled="disabled"/><br></td> 
+    <td><input ng-model="proteinPct" type="text" disabled="disabled"/><br></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
+
+
